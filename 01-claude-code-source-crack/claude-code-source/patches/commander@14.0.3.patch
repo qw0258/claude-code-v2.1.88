@@ -1,0 +1,15 @@
+diff --git a/lib/option.js b/lib/option.js
+index 4a0bd7fac72a8fcfcec620efd78c517dcc7045b8..353a09f34262a47727f7dfc1837fafa4d63f25e1 100644
+--- a/lib/option.js
++++ b/lib/option.js
+@@ -328,8 +328,8 @@ function camelcase(str) {
+ function splitOptionFlags(flags) {
+   let shortFlag;
+   let longFlag;
+-  // short flag, single dash and single character
+-  const shortFlagExp = /^-[^-]$/;
++  // short flag, single dash and one or more characters (allow multi-char like -d2e)
++  const shortFlagExp = /^-[^-]+$/;
+   // long flag, double dash and at least one character
+   const longFlagExp = /^--[^-]/;
+ 
